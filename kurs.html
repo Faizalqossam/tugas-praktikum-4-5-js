@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ID">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs Mata Uang</title>
+    <style>
+        body {
+                background-color: #054A91;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                color: honeydew;
+        }
+
+        .container {
+                background-color:#3E7CB1;
+                display: flex;
+                flex-direction: column;
+                padding: 1em;
+                max-width: 500px;
+                width: 350px;
+                border-radius: 1em;
+
+        }
+
+        input,select{
+                margin: 1em;
+                padding: 1em;
+                border-radius: 1em;
+                outline: none;
+                border: 1px solid #8FB1CC;
+                
+
+        }
+        .hitung{
+                background-color: #17283A;
+                margin: 1em;
+                padding: 1em;
+                border-radius: 1em;
+                outline: none;
+                border: 1px  solid #8FB1CC;  
+                color: aliceblue;           
+        }
+
+        .result {
+                text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>KURS MATA UANG</h2>
+<div class="container">
+    <input type="number" class="input" placeholder="masukan jumlah">
+    <select class="kurs">
+        <option value="usd">USD - 14.000</option>
+        <option value="sgd">SGD - 10.000</option>
+        <option value="eur">EURO - 16.000</option>
+        <option value="bitcoin">BITCOIN - 250.000.000</option>
+        <option value="pound">GBP - 7.000</option>
+    </select>
+    <button class="hitung">Hitung</button>
+    <p class="result">hasil </p>
+</div>
+    <script>
+        const input = document.querySelector(".input");
+        const kurs = document.querySelector(".kurs");
+        const btnHitung = document.querySelector(".hitung");
+        const result = document.querySelector(".result");
+
+        btnHitung.addEventListener("click",function(){
+            if (kurs.value == "usd") {
+                result.innerHTML = "hasil :" + parseInt(input.value) * 14000;
+            }
+            else if (kurs.value == "sgd") {
+                result.innerHTML = "hasil :" + parseInt(input.value) * 10000;
+            }
+            else if (kurs.value == "eur") {
+                result.innerHTML = "hasil :" + parseInt(input.value) * 16000;
+            }
+            else if (kurs.value == "bitcoin") {
+                result.innerHTML = "hasil :" + parseInt(input.value) * 250000000;
+            }
+            else if (kurs.value == "pound") {
+                result.innerHTML = "hasil :" + parseInt(input.value) * 7000;
+            }
+        })
+    </script>
+</body>
+</html>
