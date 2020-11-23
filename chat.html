@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat apk</title>
+    <style>
+        body{
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+        }
+        #container{
+            background-color:#006989;
+            padding: 1em;
+            max-width: 250px;
+            width: 240px;
+            border-radius: 1em;
+        }
+        #textarea{
+            text-align: left;
+            background-color: #EAEBED;
+            outline: none;
+            border: 1px solid blue;
+            border-radius: 1em;
+            height: 30vh;
+        }
+        #container2{
+            background-color:#A3BAC3; 
+            padding: 1em;
+            max-width: 250px;
+            width: 240px;
+            border-radius: 1em;
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+</head>
+<body>
+    <h2>Chat Application</h2>
+    <div id="container">
+    <fieldset id="textarea">
+    <ul id="messages"></ul>
+    </div>
+    <div id="container2">
+    <input type="text" id="textbox">
+    <button id="button">send</button>
+    </fieldset>
+    </div>
+    <script>
+        var messages = document.getElementById("messages");
+        var textbox = document.getElementById("textbox");
+        var button = document.getElementById("button");
+
+         button.addEventListener("click",function(){
+            var newMessage = document.createElement("li");
+            newMessage.innerHTML = textbox.value;
+            messages.appendChild(newMessage);
+
+        });
+    </script>
+</body>
+</html>
